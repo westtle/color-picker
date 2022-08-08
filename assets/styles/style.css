@@ -1,0 +1,235 @@
+* {
+	color: rgba(0, 0, 0, 0.9);
+	box-sizing: border-box;
+	font-family: monospace;
+}
+
+body {
+	margin: 24px;
+	text-align: center;
+}
+
+main {
+	display: flex;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#color-picker {
+	display: grid;
+	grid-template-columns: 0.5fr 1fr;
+	margin: 0 auto;
+	margin-top: 24px;
+}
+
+.selected-color span {
+	display: inline-block;
+	background: red;
+	width: 100%;
+	height: 100%;
+}
+
+.result-color {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	grid-column: 1 / 3;
+	margin: 24px;
+}
+
+.result-color__hex {
+	margin-bottom: 12px;
+	font-weight: bold;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.result-color__rgb {
+	display: grid;
+	grid-template-columns: 20px 50px 20px 50px 20px 50px;
+	justify-content: center;
+	margin: 4px;
+}
+
+.result-color__copy-button {
+	display: grid;
+	position: relative;
+	text-align: left;
+}
+
+.result-color__saved {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	max-width: 400px;
+	max-height: 54px;
+	padding: 0px 8px 0px 8px;
+	text-align: left;
+	overflow-y: auto;
+}
+
+.result-color__saved span {
+	display: block;
+	border-radius: 5%;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+.result-color__saved-buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+/* Color List */
+
+#color-list {
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	max-width: 600px;
+	margin: 12px auto 0 auto;
+}
+
+#color-list div {
+	height: 250px;
+	overflow-y: auto;
+}
+
+#color-list table {
+	width: 100%;
+	margin: 16.185px 0;
+	padding: 0 4px;
+	font-size: 12px;
+	table-layout: fixed;
+}
+
+#color-list table th {
+	padding-bottom: 15px;
+}
+
+#color-list button {
+	width: 50px;
+	height: 15px;
+}
+
+#color-list hr {
+	width: 85%;
+}
+
+/* Extra Style */
+
+button {
+	background: none;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	font-size: 11px;
+	margin: 3px;
+	padding: 2px 6px;
+	cursor: pointer;
+}
+
+hr {
+	width: 100%;
+}
+
+blockquote {
+	margin-bottom: 7.5px;
+	font-size: 10px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.fade {
+	color: rgba(0, 0, 0, 0.7);
+	font-style: italic;
+}
+
+.copy-value {
+	grid-column: 1 / 7;
+	margin-top: 14px;
+	font-size: 10px;
+}
+
+.copied-hex,
+.copied-rgb {
+	display: none;
+	width: 100px;
+	margin: -2px auto 2px auto;
+	font-size: 11px;
+}
+
+.copied-hex {
+	margin-top: -1px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.copied-rgb {
+	margin-top: 0;
+	margin-bottom: -3px;
+	text-align: center;
+}
+
+/* colorjoe */
+
+.colorPicker,
+.selected-color {
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-left: 0;
+	border-radius: 0 2px 2px 0;
+	margin: 0;
+	padding: 12px;
+}
+
+.selected-color {
+	border-left: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 2px 0 0 2px;
+}
+
+.colorPicker .oned {
+	margin: 0;
+	margin-left: 12px;
+}
+
+.colorPicker .twod {
+	margin: 0;
+}
+
+/* Footer */
+
+footer {
+	margin: 24px;
+	font-size: 11px;
+	text-align: center;
+}
+
+/* Media Query. */
+
+@media (max-width: 530px) {
+	main {
+		padding-left: 20px;
+		padding-right: 20px; 
+	}
+
+	.colorPicker {
+		display: flex;
+		justify-content: center;
+		grid-column: 1 / 3;
+		border-top: none;
+		border-left: 1px solid rgba(0, 0, 0, 0.4);
+		border-radius: 0 0 2px 2px;
+		width: 100%;
+	}
+
+	.selected-color {
+		grid-column: 1 / 3;
+		border-radius: 2px 2px 0 0;
+		height: 75px;
+	}
+
+	table {
+		font-size: 11px !important;
+	}
+}
