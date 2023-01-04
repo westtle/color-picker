@@ -118,8 +118,44 @@ main {
 	outline: none;
 }
 
+/* Saved Color */
 
+.__saved-color {
+	border: var(--border-shorthand);
+	margin-top: calc(var(--unit-two) * 2);
+}
 
+._list {
+	padding: var(--unit-two);
+	text-align: center;
+}
+
+._buttons {
+	display: flex;
+}
+
+button {
+	background: none;
+	border: none;
+	border-top: var(--border-shorthand);
+	width: 50%;
+	padding: var(--unit-one) var(--unit-two);
+	font-size: var(--font-size-button);
+	cursor: pointer;
+}
+
+.remove-all_ {
+	color: #fff;
+	background: #FD5E5E;
+	border-left: var(--border-shorthand);
+}
+
+@media (hover: hover) {
+	button:hover {
+		color: var(--button-hover-color);
+		background: var(--button-hover-backround);
+	}
+}
 
 /*.colorPicker {
 	border: none;
