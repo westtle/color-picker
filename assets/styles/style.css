@@ -29,7 +29,7 @@ body {
 }
 
 main {
-	max-width: 500px;
+	max-width: 400px;
 	margin: 4.5vh auto;
 }
 
@@ -41,7 +41,7 @@ main {
 .__selected-color {
 	border: var(--border-shorthand);
 	border-bottom: 0;
-	max-width: 290.938px;
+	width: 100%;
 	margin: 0 auto;
 	padding: var(--unit-two);
 }
@@ -56,16 +56,67 @@ main {
 .__colorjoe {
 	display: flex;
 	justify-content: center;
+	border: var(--border-shorthand);
 	width: 100%;
+	padding: var(--unit-two);
 }
 
 .__colorjoe .colorPicker {
 	background: none;
-	border: var(--border-shorthand);
+	border: none;
 	border-radius: 0;
 	margin: 0;
 }
 
+.__result {
+	display: flex;
+}
+
+._hex,
+._rgb {
+	display: flex;
+	width: 100%;
+}
+
+._rgb input {
+	border-left: none;
+}
+
+._hex .copy_,
+._rgb .copy_ {
+	border: var(--border-shorthand);
+	border-top: none;
+	border-left: none;
+	padding: 0 var(--unit-one);
+	cursor: pointer;
+}
+
+.copy_ img {
+	height: 100%;
+	width: 21px;
+	padding: 3px;
+	opacity: 0.6;
+}
+
+.copy_:hover img {
+	opacity: 0.9;
+}
+
+.selected-color-input_ {
+	border: var(--border-shorthand);
+	border-top: none;
+	border-right: none;
+	width: 100%;
+	padding: var(--unit-one) var(--unit-two);
+	font-size: var(--font-size-button);
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+}
+
+.selected-color-input_:focus {
+	outline: none;
+}
 
 
 
