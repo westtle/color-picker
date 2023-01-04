@@ -77,6 +77,12 @@ function removeAllColor() {
     saveSavedColor();
 };
 
+function setColor(colorCode) {
+    joe.set(colorCode.value);
+
+    saveLastSelectedColor();
+};
+
 // Local Storage.
 const colorSaved = "Saved_Color";
 const lastSelectedColor = "Last_Selected_Color";
@@ -113,6 +119,9 @@ function loadLastSelectedColor() {
     joe.set(selectedLastTime);
 };
 
+
+hexInput.addEventListener("change", () => setColor(hexInput));
+rgbInput.addEventListener("change", () => setColor(rgbInput));
 hexCopy.addEventListener("click", () => copyText(hexInput));
 rgbCopy.addEventListener("click", () => copyText(rgbInput));
 saveColorButton.addEventListener("click", saveColor);
