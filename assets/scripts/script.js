@@ -1,3 +1,6 @@
+let savedColor = [];
+let currentColor = "#ff0000";
+
 // HTML.
 const selectedColorShowcase = document.querySelector(".__selected-color span");
 
@@ -7,9 +10,15 @@ const rgbInput = document.querySelector("._rgb input");
 const hexCopy = document.querySelector("._hex .copy_");
 const rgbCopy = document.querySelector("._rgb .copy_");
 
+const colorList = document.querySelector("._list");
+const saveColorButton = document.querySelector(".save_");
+const removeAllButton = document.querySelector(".remove-all_");
+
 // colorjoe.
 const joe = colorjoe.rgb(document.querySelector(".__colorjoe div"), "red");
 joe.on("change", color => {
+    currentColor = color.hex();
+
     selectedColorShowcase.style.background = color.hex();
     hexInput.value = color.hex();
     rgbInput.value = color.css().replaceAll(',', ', ');
@@ -21,8 +30,50 @@ function copyText(colorCode) {
     navigator.clipboard.writeText(colorCode.value);
 };
 
+function saveColor() {
+    const colorToSave = `<span style="background: ${currentColor}" data-color="${currentColor}" onclick="selectColor(this.dataset.color)" oncontextmenu="removeColor(this.dataset.color, this)"></span>`;
+
+    const isDuplicate = savedColor.some((value, index) => value == currentColor);
+    if (isDuplicate) return;
+
+    if (colorList.innerText == "Empty.") {
+        colorList.innerText = "";
+        colorList.style.justifyContent = "flex-start";
+    };
+
+    colorList.innerHTML += colorToSave;
+
+    savedColor.push(currentColor);
+};
+
+function selectColor(color) {
+    joe.set(color);
+};
+
+function removeColor(color, element) {
+    element.remove();
+
+    // Remove from array.
+    savedColor.forEach((item, index) => {
+        if (item == color) savedColor.splice(index, 1);
+    });
+
+    if (savedColor.length == 0) {
+        colorList.innerText = "Empty.";
+        colorList.style.justifyContent = "center";
+    };
+};
+
+function removeAllColor() {
+    colorList.innerText = "Empty.";
+    colorList.style.justifyContent = "center";
+    savedColor = [];
+};
+
 hexCopy.addEventListener("click", () => copyText(hexInput));
 rgbCopy.addEventListener("click", () => copyText(rgbInput));
+saveColorButton.addEventListener("click", saveColor);
+removeAllButton.addEventListener("click", removeAllColor);
 
 
 // let savedColorList = [];

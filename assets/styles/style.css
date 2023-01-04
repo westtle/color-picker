@@ -126,8 +126,23 @@ main {
 }
 
 ._list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 3px;
+	max-height: 75px;
+	min-height: 41px;
 	padding: var(--unit-two);
-	text-align: center;
+	overflow-y: auto;
+}
+
+._list span {
+	display: inline-block;
+	background: red;
+	border-radius: 5%;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
 }
 
 ._buttons {
