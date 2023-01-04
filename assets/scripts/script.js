@@ -10,7 +10,7 @@ const rgbInput = document.querySelector("._rgb input");
 const hexCopy = document.querySelector("._hex .copy_");
 const rgbCopy = document.querySelector("._rgb .copy_");
 
-const colorList = document.querySelector("._list");
+const savedColorList = document.querySelector("._list");
 const saveColorButton = document.querySelector(".save_");
 const removeAllButton = document.querySelector(".remove-all_");
 
@@ -26,30 +26,30 @@ joe.on("change", color => {
 
 joe.on("done", color => saveLastSelectedColor());
 
-function copyText(colorCode) {
+function copyColor(colorCode) {
     colorCode.select();
     colorCode.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(colorCode.value);
 };
 
 function saveColor() {
-    const colorToSave = `<span style="background: ${currentColor}" data-color="${currentColor}" onclick="selectColor(this.dataset.color)" oncontextmenu="removeColor(this.dataset.color, this)"></span>`;
+    const colorToSave = `<span style="background: ${currentColor}" data-color="${currentColor}" onclick="selectSavedColor(this.dataset.color)" oncontextmenu="removeColor(this.dataset.color, this)"></span>`;
 
     const isDuplicate = savedColor.some((value, index) => value == currentColor);
     if (isDuplicate) return;
 
-    if (colorList.innerText == "Empty.") {
-        colorList.innerText = "";
-        colorList.style.justifyContent = "flex-start";
+    if (savedColorList.innerText == "Empty.") {
+        savedColorList.innerText = "";
+        savedColorList.style.justifyContent = "flex-start";
     };
 
-    colorList.innerHTML += colorToSave;
+    savedColorList.innerHTML += colorToSave;
 
     savedColor.push(currentColor);
     saveSavedColor();
 };
 
-function selectColor(color) {
+function selectSavedColor(color) {
     joe.set(color);
 
     saveLastSelectedColor();
@@ -64,16 +64,16 @@ function removeColor(color, element) {
     });
 
     if (savedColor.length == 0) {
-        colorList.innerText = "Empty.";
-        colorList.style.justifyContent = "center";
+        savedColorList.innerText = "Empty.";
+        savedColorList.style.justifyContent = "center";
     };
 
     saveSavedColor();
 };
 
 function removeAllColor() {
-    colorList.innerText = "Empty.";
-    colorList.style.justifyContent = "center";
+    savedColorList.innerText = "Empty.";
+    savedColorList.style.justifyContent = "center";
     savedColor = [];
 
     saveSavedColor();
@@ -99,16 +99,16 @@ function loadSavedColor() {
     savedColor = colorFromStorage;
 
     if (savedColor.length == 0) {
-        colorList.innerText = "Empty.";
+        savedColorList.innerText = "Empty.";
     } else {
-        colorList.innerText = "";
-        colorList.style.justifyContent = "flex-start";
+        savedColorList.innerText = "";
+        savedColorList.style.justifyContent = "flex-start";
     };
 
     // Renderer.
     savedColor.forEach((item, index) => {
-        const toLoad = `<span style="background: ${item}" data-color="${item}" onclick="selectColor(this.dataset.color)" oncontextmenu="removeColor(this.dataset.color, this)"></span>`;
-        colorList.innerHTML += toLoad;
+        const toLoad = `<span style="background: ${item}" data-color="${item}" onclick="selectSavedColor(this.dataset.color)" oncontextmenu="removeColor(this.dataset.color, this)"></span>`;
+        savedColorList.innerHTML += toLoad;
     });
 };
 

@@ -67,12 +67,14 @@ main {
 	margin: 0;
 }
 
-.__colorjoe .colorPicker .twod, .colorPicker .twod .bg {
+.__colorjoe .colorPicker .twod,
+.__colorjoe .colorPicker .twod .bg {
 	max-width: 15rem;
 	max-height: 15rem;
 }
 
-.__colorjoe .colorPicker .oned, .colorPicker .oned .bg {
+.__colorjoe .colorPicker .oned,
+.__colorjoe .colorPicker .oned .bg {
 	max-height: 15rem;
 }
 
@@ -204,12 +206,14 @@ main {
 		width: 100%;
 	}
 
-	.colorPicker .twod, .colorPicker .twod .bg {
+	.__colorjoe .colorPicker .twod,
+	.__colorjoe .colorPicker .twod .bg  {
 		width: 12.5rem;
 		height: 12.5rem;
 	}
 
-	.colorPicker .oned, .colorPicker .oned .bg {
+	.__colorjoe .colorPicker .oned,
+	.__colorjoe .colorPicker .oned .bg {
 		height: 12.5rem;
 	}
 
@@ -228,12 +232,14 @@ main {
 		width: 100%;
 	}
 
-	.colorPicker .twod, .colorPicker .twod .bg {
+	.__colorjoe .colorPicker .twod,
+	.__colorjoe .colorPicker .twod .bg  {
 		width: 10rem;
 		height: 10rem;
 	}
 
-	.colorPicker .oned, .colorPicker .oned .bg {
+	.__colorjoe .colorPicker .oned,
+	.__colorjoe .colorPicker .oned .bg {
 		height: 10rem;
 	}
 }
@@ -244,12 +250,14 @@ main {
 		width: 100%;
 	}
 
-	.colorPicker .twod, .colorPicker .twod .bg {
+	.__colorjoe .colorPicker .twod,
+	.__colorjoe .colorPicker .twod .bg  {
 		width: 7.5rem;
 		height: 7.5rem;
 	}
 
-	.colorPicker .oned, .colorPicker .oned .bg {
+	.__colorjoe .colorPicker .oned,
+	.__colorjoe .colorPicker .oned .bg {
 		height: 7.5rem;
 	}
 }
