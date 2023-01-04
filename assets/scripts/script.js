@@ -44,6 +44,7 @@ function saveColor() {
     colorList.innerHTML += colorToSave;
 
     savedColor.push(currentColor);
+    saveSavedColor();
 };
 
 function selectColor(color) {
@@ -62,12 +63,43 @@ function removeColor(color, element) {
         colorList.innerText = "Empty.";
         colorList.style.justifyContent = "center";
     };
+
+    saveSavedColor();
 };
 
 function removeAllColor() {
     colorList.innerText = "Empty.";
     colorList.style.justifyContent = "center";
     savedColor = [];
+
+    saveSavedColor();
+};
+
+// Local Storage.
+const colorSaved = "Saved_Color";
+const lastSelectedColor = "Last_Selected_Color";
+
+function saveSavedColor() {
+    localStorage.setItem(colorSaved, JSON.stringify(savedColor));
+};
+
+function loadSavedColor() {
+    let colorFromStorage = JSON.parse(localStorage.getItem(colorSaved)) || [];
+
+    savedColor = colorFromStorage;
+
+    if (savedColor.length == 0) {
+        colorList.innerText = "Empty.";
+    } else {
+        colorList.innerText = "";
+        colorList.style.justifyContent = "flex-start";
+    };
+
+    // Renderer.
+    savedColor.forEach((item, index) => {
+        const toLoad = `<span style="background: ${item}" data-color="${item}" onclick="selectColor(this.dataset.color)" oncontextmenu="removeColor(this.dataset.color, this)"></span>`;
+        colorList.innerHTML += toLoad;
+    });
 };
 
 hexCopy.addEventListener("click", () => copyText(hexInput));
@@ -75,6 +107,9 @@ rgbCopy.addEventListener("click", () => copyText(rgbInput));
 saveColorButton.addEventListener("click", saveColor);
 removeAllButton.addEventListener("click", removeAllColor);
 
+document.addEventListener("DOMContentLoaded", () => {
+    loadSavedColor();
+});
 
 // let savedColorList = [];
 // let colorHold = "#d35252";
