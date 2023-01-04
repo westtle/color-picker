@@ -1,4 +1,45 @@
-* {
+:root {
+	--font-size-main: 0.906rem; /* 14.5px */
+	--font-size-second: 0.688rem; /* 11px */
+
+	--color-main: rgba(0, 0, 0, 0.8);
+	--border-main: rgba(0, 0, 0, 0.6);
+	--border-shorthand: 0.063rem solid rgba(0, 0, 0, 0.6);
+
+	/* Button */
+	--button-hover-backround: rgba(0, 0, 0, 0.8);
+	--button-hover-color: rgba(255, 255, 255, 0.9);
+	--font-size-button: 0.769rem; /* 12.3px */
+
+	--unit-one: 0.438rem; /* 7px */
+	--unit-two: 0.75rem; /* 12px */
+}
+
+*, *::before, *::after {
+	color: var(--color-main);
+	box-sizing: border-box;
+}
+
+body {
+	/* Left & right spacing: left & right from default body margin + 12px */
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: var(--unit-two);
+	font-size: var(--font-size-main);
+}
+
+main {
+	max-width: 37.5rem;
+	margin: 4.5vh auto;
+}
+
+
+
+
+
+
+
+/** {
 	color: rgba(0, 0, 0, 0.9);
 	box-sizing: border-box;
 	font-family: monospace;
@@ -232,4 +273,4 @@ footer {
 	table {
 		font-size: 11px !important;
 	}
-}
+}*/
