@@ -24,6 +24,8 @@ joe.on("change", color => {
     rgbInput.value = color.css().replaceAll(',', ', ');
 });
 
+joe.on("done", color => saveLastSelectedColor());
+
 function copyText(colorCode) {
     colorCode.select();
     colorCode.setSelectionRange(0, 99999);
@@ -102,6 +104,15 @@ function loadSavedColor() {
     });
 };
 
+function saveLastSelectedColor() {
+    localStorage.setItem(lastSelectedColor, currentColor);
+};
+
+function loadLastSelectedColor() {
+    const selectedLastTime = localStorage.getItem(lastSelectedColor) || "#ff0000";
+    joe.set(selectedLastTime);
+};
+
 hexCopy.addEventListener("click", () => copyText(hexInput));
 rgbCopy.addEventListener("click", () => copyText(rgbInput));
 saveColorButton.addEventListener("click", saveColor);
@@ -109,6 +120,7 @@ removeAllButton.addEventListener("click", removeAllColor);
 
 document.addEventListener("DOMContentLoaded", () => {
     loadSavedColor();
+    loadLastSelectedColor();
 });
 
 // let savedColorList = [];
