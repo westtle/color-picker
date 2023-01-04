@@ -1,6 +1,28 @@
-const joe = colorjoe.rgb(document.querySelector(".__colorjoe div"), "red");
+// HTML.
+const selectedColorShowcase = document.querySelector(".__selected-color span");
 
-// joe.on("change", color => console.log("Selecting " + color.css()));
+const hexInput = document.querySelector("._hex input");
+const rgbInput = document.querySelector("._rgb input");
+
+const hexCopy = document.querySelector("._hex .copy_");
+const rgbCopy = document.querySelector("._rgb .copy_");
+
+// colorjoe.
+const joe = colorjoe.rgb(document.querySelector(".__colorjoe div"), "red");
+joe.on("change", color => {
+    selectedColorShowcase.style.background = color.hex();
+    hexInput.value = color.hex();
+    rgbInput.value = color.css().replaceAll(',', ', ');
+});
+
+function copyText(colorCode) {
+    colorCode.select();
+    colorCode.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(colorCode.value);
+};
+
+hexCopy.addEventListener("click", () => copyText(hexInput));
+rgbCopy.addEventListener("click", () => copyText(rgbInput));
 
 
 // let savedColorList = [];
