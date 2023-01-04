@@ -1,0 +1,59 @@
+/* Color List */
+
+#color-list {
+	border: var(--border-shorthand);
+	padding: calc(var(--unit-two) * 2);
+	margin-top: var(--unit-two);
+	text-align: center;
+}
+
+.__basic-colors,
+.__extended-colors {
+	border: var(--border-shorthand);
+}
+
+.__basic-colors {
+	margin-top: var(--unit-two);
+	margin-bottom: var(--unit-one);
+}
+
+.__basic-colors div,
+.__extended-colors div {
+	height: 200px;
+	padding: 0 0 0.5em 0;
+	overflow-y: auto;
+}
+
+table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+th {
+	padding: var(--unit-one) 0;
+}
+
+td {
+	padding: 3px 0;
+}
+
+td button {
+	border: var(--border-shorthand);
+	width: 35%;
+	padding: var(--unit-one) var(--unit-two);
+	cursor: pointer;
+}
+
+hr {
+	border-top: var(--border-shorthand);
+	width: 88%;
+}
+
+.__show-button {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.hidden_ {
+	display: none;
+}
