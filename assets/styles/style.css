@@ -20,8 +20,7 @@
 	box-sizing: border-box;
 }
 
-body {
-	/* Left & right spacing: left & right from default body margin + 12px */
+body { /* Left & right spacing is left & right from default body margin + 12px */
 	margin-top: 0;
 	margin-bottom: 0;
 	padding: var(--unit-two);
@@ -29,7 +28,7 @@ body {
 }
 
 main {
-	max-width: 400px;
+	max-width: 25rem;
 	margin: 4.5vh auto;
 }
 
@@ -49,7 +48,7 @@ main {
 .__selected-color span {
 	display: inline-block;
 	background: red;
-	height: 60px;
+	height: 3.75rem;
 	width: 100%;
 }
 
@@ -66,6 +65,15 @@ main {
 	border: none;
 	border-radius: 0;
 	margin: 0;
+}
+
+.__colorjoe .colorPicker .twod, .colorPicker .twod .bg {
+	max-width: 15rem;
+	max-height: 15rem;
+}
+
+.__colorjoe .colorPicker .oned, .colorPicker .oned .bg {
+	max-height: 15rem;
 }
 
 .__result {
@@ -93,8 +101,8 @@ main {
 
 .copy_ img {
 	height: 100%;
-	width: 21px;
-	padding: 3px;
+	width: 1.313rem;
+	padding: 0.188rem;
 	opacity: 0.6;
 }
 
@@ -130,9 +138,9 @@ main {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 3px;
-	max-height: 75px;
-	min-height: 41px;
+	gap: 0.188rem;
+	max-height: 4.688rem;
+	min-height: 2.563rem;
 	padding: var(--unit-two);
 	overflow-y: auto;
 }
@@ -141,8 +149,8 @@ main {
 	display: inline-block;
 	background: red;
 	border-radius: 5%;
-	width: 15px;
-	height: 15px;
+	width: 0.938rem;
+	height: 0.938rem;
 	cursor: pointer;
 }
 
@@ -190,19 +198,19 @@ main {
 	}
 }
 
-@media (max-width: 400px) { /* 400px */
+@media (max-width: 25rem) { /* 400px */
 	.__selected-color span {
-		height: 45px;
+		height: 2.813rem;
 		width: 100%;
 	}
 
 	.colorPicker .twod, .colorPicker .twod .bg {
-		width: 200px;
-		height: 200px;
+		width: 12.5rem;
+		height: 12.5rem;
 	}
 
 	.colorPicker .oned, .colorPicker .oned .bg {
-		height: 200px;
+		height: 12.5rem;
 	}
 
 	.__result {
@@ -214,34 +222,34 @@ main {
 	}
 }
 
-@media (max-width: 355px) { /* 355px */
+@media (max-width: 22.188rem) { /* 355px */
 	.__selected-color span {
-		height: 35px;
+		height: 2.188rem;
 		width: 100%;
 	}
 
 	.colorPicker .twod, .colorPicker .twod .bg {
-		width: 160px;
-		height: 160px;
+		width: 10rem;
+		height: 10rem;
 	}
 
 	.colorPicker .oned, .colorPicker .oned .bg {
-		height: 160px;
+		height: 10rem;
 	}
 }
 
-@media (max-width: 315px) { /* 315px */
+@media (max-width: 19.688rem) { /* 315px */
 	.__selected-color span {
-		height: 30px;
+		height: 1.875rem;
 		width: 100%;
 	}
 
 	.colorPicker .twod, .colorPicker .twod .bg {
-		width: 120px;
-		height: 120px;
+		width: 7.5rem;
+		height: 7.5rem;
 	}
 
 	.colorPicker .oned, .colorPicker .oned .bg {
-		height: 120px;
+		height: 7.5rem;
 	}
 }
