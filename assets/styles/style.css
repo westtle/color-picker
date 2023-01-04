@@ -221,3 +221,13 @@ hr {
 	border-top: var(--border-shorthand);
 	width: 88%;
 }
+
+/* Notice / Link */
+
+#notice {
+	margin-top: var(--unit-two);
+	padding: 0 var(--unit-one);
+	font-size: var(--font-size-second);
+	text-align: center;
+	word-wrap: break-word;
+}
