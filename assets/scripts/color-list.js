@@ -24,7 +24,7 @@ function generateColorList(data) {
     colorBasic.forEach((item, index) => {
         let colorTable = `<tr>
                             <td>${item}</td>
-                            <td><button style="background: ${hexBasic[index]};" data-color="${hexBasic[index]}" onclick="selectColor(this.dataset.color)"></button></td>
+                            <td><button style="background: ${hexBasic[index]};" aria-label="${item}" data-color="${hexBasic[index]}" onclick="selectColor(this.dataset.color)"></button></td>
                         </tr>`;
 
         tableBasic.innerHTML += colorTable;
@@ -34,7 +34,7 @@ function generateColorList(data) {
     colorExtended.forEach((item, index) => {
         let colorTable = `<tr>
                             <td>${item}</td>
-                            <td><button style="background: ${hexExtended[index]};" data-color="${hexExtended[index]}" onclick="selectColor(this.dataset.color)"></button></td>
+                            <td><button style="background: ${hexExtended[index]};" aria-label="${item}" data-color="${hexExtended[index]}" onclick="selectColor(this.dataset.color)"></button></td>
                         </tr>`;
 
         tableExtended.innerHTML += colorTable;
