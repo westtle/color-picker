@@ -1,11 +1,10 @@
+// Color List.
 let openedBefore = false;
 
-// Color List.
-const jsonColor = "assets/css-color-names.json";
+const colorNamesJSON = "assets/css-color-names.json";
 
 const tableBasic = document.querySelector(".__basic-colors table");
 const tableExtended = document.querySelector(".__extended-colors table");
-
 const showButton = document.querySelector(".__show-button");
 
 function generateColorList(data) {
@@ -45,7 +44,7 @@ function showList() {
     if (!openedBefore) {
         openedBefore = true;
 
-        fetch(jsonColor)
+        fetch(colorNamesJSON)
             .then(response => response.json())
             .then(data => generateColorList(data))
             .catch(err => {
