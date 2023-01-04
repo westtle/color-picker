@@ -187,6 +187,7 @@ main {
 }
 
 .__basic-colors {
+	margin-top: var(--unit-two);
 	margin-bottom: var(--unit-one);
 }
 
@@ -220,6 +221,15 @@ td button {
 hr {
 	border-top: var(--border-shorthand);
 	width: 88%;
+}
+
+.__show-button {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.hidden_ {
+	display: none;
 }
 
 /* Notice / Link */
