@@ -123,8 +123,8 @@ function loadLastSelectedColor() {
 
 hexInput.addEventListener("change", () => setColor(hexInput));
 rgbInput.addEventListener("change", () => setColor(rgbInput));
-hexCopy.addEventListener("click", () => copyText(hexInput));
-rgbCopy.addEventListener("click", () => copyText(rgbInput));
+hexCopy.addEventListener("click", () => copyColor(hexInput));
+rgbCopy.addEventListener("click", () => copyColor(rgbInput));
 saveColorButton.addEventListener("click", saveColor);
 removeAllButton.addEventListener("click", removeAllColor);
 
