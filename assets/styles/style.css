@@ -194,11 +194,13 @@ main {
 	}
 }
 
-@media (max-width: 30rem) { /* 480px / For font-size */
+/* Font Size */
+@media (max-width: 30rem) { /* 480px */
 	html {
 		font-size: calc(1rem - 10%);
 	}
 }
+/* -------- */
 
 @media (max-width: 25rem) { /* 400px */
 	.__selected-color span {
