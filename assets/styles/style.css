@@ -109,10 +109,6 @@ main {
 	height: 100%;
 	width: 1.313rem;
 	padding: 0.188rem;
-	opacity: 0.6;
-}
-
-.copy_:hover img {
 	opacity: 0.9;
 }
 
@@ -196,6 +192,14 @@ main {
 	._buttons button:hover {
 		color: var(--button-hover-color);
 		background: var(--button-hover-backround) !important;
+	}
+
+	.copy_ img {
+		opacity: 0.6;
+	}
+
+	.copy_:hover img {
+		opacity: 0.9;
 	}
 }
 
