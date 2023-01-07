@@ -37,6 +37,8 @@ main {
 	padding: calc(var(--unit-two) * 2);
 }
 
+/* Top Part / The One That Shows The Color You Selected */
+
 .__selected-color {
 	border: var(--border-shorthand);
 	border-bottom: 0;
@@ -51,6 +53,8 @@ main {
 	height: 3.75rem;
 	width: 100%;
 }
+
+/* The Color Picker Itself */
 
 .__colorjoe {
 	display: flex;
@@ -187,6 +191,7 @@ main {
 }
 
 /* Media Query */
+
 @media (hover: hover) {
 	._buttons button:hover {
 		color: var(--button-hover-color);
