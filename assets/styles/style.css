@@ -109,7 +109,7 @@ main {
 	height: 100%;
 	width: 1.313rem;
 	padding: 0.188rem;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 .selected-color-input_ {
@@ -199,7 +199,7 @@ main {
 	}
 
 	.copy_:hover img {
-		opacity: 0.9;
+		opacity: 0.8;
 	}
 }
 
