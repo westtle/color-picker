@@ -86,15 +86,15 @@ function setColor(colorCode) {
 };
 
 // Local Storage.
-const colorSaved = "Saved_Color";
-const lastSelectedColor = "Last_Selected_Color";
+const saved_color = "Saved_Color";
+const last_selected_color = "Last_Selected_Color";
 
 function saveSavedColor() {
-    localStorage.setItem(colorSaved, JSON.stringify(savedColor));
+    localStorage.setItem(saved_color, JSON.stringify(savedColor));
 };
 
 function loadSavedColor() {
-    let colorFromStorage = JSON.parse(localStorage.getItem(colorSaved)) || [];
+    let colorFromStorage = JSON.parse(localStorage.getItem(saved_color)) || [];
 
     savedColor = colorFromStorage;
 
@@ -113,11 +113,11 @@ function loadSavedColor() {
 };
 
 function saveLastSelectedColor() {
-    localStorage.setItem(lastSelectedColor, currentColor);
+    localStorage.setItem(last_selected_color, currentColor);
 };
 
 function loadLastSelectedColor() {
-    const selectedLastTime = localStorage.getItem(lastSelectedColor) || "#ff0000";
+    const selectedLastTime = localStorage.getItem(last_selected_color) || "#ff0000";
     joe.set(selectedLastTime);
 };
 
