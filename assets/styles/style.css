@@ -21,15 +21,20 @@
 }
 
 body { /* Left & right spacing is left & right from default body margin + 12px */
-	margin-top: 0;
-	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 91vh;
+	margin-top: 4.5vh;
+	margin-bottom: 4.5vh;
 	padding: var(--unit-two);
 	font-size: var(--font-size-main);
+	text-align: center;
 }
 
 main {
+	width: 100%;
 	max-width: 25rem;
-	margin: 4.5vh auto;
 }
 
 #color-picker {
