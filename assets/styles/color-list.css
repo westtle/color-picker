@@ -2,8 +2,8 @@
 
 #color-list {
 	border: var(--border-shorthand);
-	padding: calc(var(--unit-two) * 2);
-	margin-top: var(--unit-two);
+	padding: calc(var(--twelve) * 2);
+	margin-top: var(--twelve);
 	text-align: center;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .__basic-colors {
-	margin-top: var(--unit-two);
-	margin-bottom: var(--unit-one);
+	margin-top: var(--twelve);
+	margin-bottom: var(--seven);
 }
 
 .__basic-colors div,
@@ -30,7 +30,7 @@ table {
 }
 
 th {
-	padding: var(--unit-one) 0;
+	padding: var(--seven) 0;
 }
 
 td {
@@ -40,7 +40,7 @@ td {
 td button {
 	border: var(--border-shorthand);
 	width: 35%;
-	padding: var(--unit-one) var(--unit-two);
+	padding: var(--seven) var(--twelve);
 	cursor: pointer;
 }
 
