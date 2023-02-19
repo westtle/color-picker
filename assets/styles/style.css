@@ -33,7 +33,6 @@ body { /* Left & right spacing is left & right from default body margin + 12px *
 }
 
 main {
-	width: 100%;
 	max-width: 25rem;
 }
 
@@ -184,7 +183,7 @@ main {
 /* Notice / Link */
 
 #notice {
-	margin-top: 0.625rem;
+	margin-top: 0.656rem;
 	padding: 0 var(--unit-one);
 	font-size: var(--font-size-second);
 	line-height: 1.1;
