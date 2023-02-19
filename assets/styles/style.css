@@ -34,6 +34,7 @@ body { /* Left & right spacing is left & right from default body margin + 12px *
 }
 
 main {
+	width: 100%;
 	max-width: 25rem;
 }
 
